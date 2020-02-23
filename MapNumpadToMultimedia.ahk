@@ -2,7 +2,7 @@
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-
+#SingleInstance force
 
 ;;;;;;;; https://www.maketecheasier.com/schedule-autohotkey-startup-windows/
 ;;;;;;;; https://wiki.hydrogenaud.io/index.php?title=Foobar2000:Preferences:General:Keyboard_Shortcuts
@@ -134,19 +134,20 @@ Run, C:\Program Files (x86)\foobar2000\foobar2000.exe
 Run, C:\Program Files (x86)\foobar2000\foobar2000.exe /pause
 ;;Run, C:\Program Files (x86)\foobar2000\foobar2000.exe /playing_command:"Delete file(s)"
 Run, C:\Program Files (x86)\foobar2000\foobar2000.exe /command:"Show now playing in playlist"
-Sleep, 200
-Send, x
-Sleep, 200
-Send, y
-Sleep, 50
+Sleep, 100
+Send, {F8} ;; I added F8 as a keybind in foobar's preferences to the "Delete file(s)" command
+Sleep, 100
+Send, {Left}
+Sleep, 100
+Send, {Enter}
+Sleep, 100
 Run, C:\Program Files (x86)\foobar2000\foobar2000.exe /next
 Run, C:\Program Files (x86)\foobar2000\foobar2000.exe /command:"Stop after current"
+Sleep, 100
 Send, {Alt down}
 Send, {Tab}
 Send, {Alt up}
 return
-
-
 
 NumpadAdd::Media_Play_Pause
 NumpadEnter::Media_Play_Pause
