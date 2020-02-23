@@ -119,9 +119,12 @@ Run, C:\Program Files (x86)\foobar2000\foobar2000.exe
 Run, C:\Program Files (x86)\foobar2000\foobar2000.exe /command:"Pause"
 Run, C:\Program Files (x86)\foobar2000\foobar2000.exe /command:"Show now playing in playlist"
 ;;Run, C:\Program Files (x86)\foobar2000\foobar2000.exe /playing_command:"Remove from playback queue"
+Sleep, 100
 Send, {Delete} ; Press delete key since the above line doesn't work for some reason
+Sleep, 100
 Run, C:\Program Files (x86)\foobar2000\foobar2000.exe /next
 Run, C:\Program Files (x86)\foobar2000\foobar2000.exe /command:"Stop after current"
+Sleep, 100
 Send, {Alt down}
 Send, {Tab}
 Send, {Alt up}
