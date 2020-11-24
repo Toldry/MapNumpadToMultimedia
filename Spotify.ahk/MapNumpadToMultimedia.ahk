@@ -95,7 +95,9 @@ OpenAndFocusOnSpotify()
     }
     else 
     {
-      Run, C:\Users\Alon Eitan\AppData\Roaming\Spotify\Spotify.exe    
+      EnvGet, Loc, USERPROFILE 
+      Loc := Loc . "\AppData\Roaming\Spotify\Spotify.exe"
+      Run, %Loc%
     }
   }
   return
